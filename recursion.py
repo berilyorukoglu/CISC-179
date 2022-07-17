@@ -1,7 +1,7 @@
 from showcallstack import showcallstack
 
 
-def countDownAndUp(number):
+def countDownAndUp(number,count):
     print(number)
     if number == 0:
         # BASE CASE
@@ -9,14 +9,18 @@ def countDownAndUp(number):
         return
     else:
         # RECURSIVE CASE
-        countDownAndUp(number - 1)
-        #showcallstack()
-        print(number, 'returning')
+        count += 1
+
+        print('* ', count)
+        print('call countDownAndUp', number)
+        countDownAndUp(number - 1, count)
+        # showcallstack()
+
+        print('r', number)
         return
 
-    # This is a comment
-    # Is this goig to work now
 
 
-countDownAndUp(3)
-
+print('first call')
+countDownAndUp(3, 0)
+print('I am here now ')
